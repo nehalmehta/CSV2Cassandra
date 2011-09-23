@@ -1,0 +1,32 @@
+CSV2Cassandra is utility to convert existing CSV data into Cassandra. 
+I had 10GB+ CSV files, which I wanted to import into cassandra, but using 
+consistency level of EACH_QORUM. So I have written this utility which 
+parses CSV data and imports it into Cassandra. I have used Hector API 
+(https://github.com/rantav/hector) to import data into cassandra. 
+
+Configuration Parameters such as host name, port, column family etc 
+are specificed at config/config.xml
+
+Assumptions: 
+
+    First row of CSV is header row i.e column names for our column family
+and similarly first column is key. 
+
+Wish List: 
+
+    1. Mapping of multiple CSV into Single Column Family and vice versa.
+    2. Configurable column for keys.
+
+
+-- THE UTILITY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
+
+
+
