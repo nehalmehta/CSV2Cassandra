@@ -1,8 +1,9 @@
 <CassandraImporter>
 	<hostName>192.168.56.101</hostName>
 	<port>9160</port>
+	<clusterName>Test Cluster</clusterName>
 	<consistencyLevel>HConsistencyLevel.ONE</consistencyLevel>
-        <columnFamily>csvCF</columnFamily>
+    <columnFamily>csvCF</columnFamily>
 	<keySpace>csvKS</keySpace>
 	<importFile>/path-to-file/DB.csv</importFile>
 	<delimeter>,</delimeter>

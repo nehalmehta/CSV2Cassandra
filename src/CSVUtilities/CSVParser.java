@@ -34,7 +34,7 @@ public class CSVParser {
 						String[] columns = lineContent.split(configuration.delimeter);
 
 						CassandraConnector cassandraConnector = new CassandraConnector(
-								configuration.hostName, configuration.port);
+								configuration);
 
 						CRUDUtilities crudUtilities = new CRUDUtilities(
 								cassandraConnector, configuration.keySpace, configuration);

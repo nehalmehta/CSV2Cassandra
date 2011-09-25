@@ -21,8 +21,9 @@ public class Configuration {
 	public String consistencyLevel = "";
 	public String columnFamily = "";
 	public String keySpace = "";
-	public String importFile;
-	public String delimeter;
+	public String importFile ="";
+	public String delimeter = ",";
+	public String clusterName = "";
 
 	public Configuration() {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -55,7 +56,11 @@ public class Configuration {
 			this.importFile = nl.item(0).getFirstChild().getNodeValue();
 			nl = docEle
 					.getElementsByTagName("delimeter");
-			this.delimeter = nl.item(0).getFirstChild().getNodeValue();		
+			this.delimeter = nl.item(0).getFirstChild().getNodeValue();
+			
+			nl = docEle
+					.getElementsByTagName("clusterName");
+			this.clusterName = nl.item(0).getFirstChild().getNodeValue();
 		} catch (ParserConfigurationException pce) {
 			pce.printStackTrace();
 		} catch (SAXException se) {
