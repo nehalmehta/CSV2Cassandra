@@ -1,21 +1,31 @@
-CSV2Cassandra is utility to convert existing CSV data into Cassandra. 
-I had 10GB+ CSV files, which I wanted to import into cassandra, but using 
-consistency level of EACH_QORUM. So I have written this utility which 
-parses CSV data and imports it into Cassandra. I have used Hector API 
-(https://github.com/rantav/hector) to import data into cassandra. 
+﻿Import CSV Data into Cassandra:
 
-Configuration Parameters such as host name, port, column family etc 
-are specificed at config/config.xml
+Utility can be used to import large CSV data into  Cassandra Column family.   It is used to import large CSV files (probably exported from SQL DBs like MySQL , PostGre SQL) into Cassandra. If required consistency level can also be maintained  while carrying out imports.  I had to import 10GB+ CSV files into cassandra, but only if  nodes in each zone were up  so consistency level was used. 
+
+Utilitiy is built using https://github.com/rantav/hector API to import data into Cassandra.
+
+Steps:
+1. Configure following parameters at config/config.xml (Sample Config File is already present):
+	1. hostName 
+	2. port
+	3. clusterName
+	4. consistencyLevel
+	5. columnFamily
+	6. keySpace
+	7. importFile
+	8. delimeter
+2. After configuration just run the utility, and  keeping checking logs if you think it is  taking  long time.
+
 
 Assumptions: 
 
-    First row of CSV is header row i.e column names for our column family
+   First row of CSV is header row i.e column names for our column family
 and similarly first column is key. 
 
 Wish List: 
 
-    1. Mapping of multiple CSV into Single Column Family and vice versa.
-    2. Configurable column for keys.
+   1. Mapping of multiple CSV into Single Column Family and vice versa.
+   2. Configurable column for keys.
 
 
 -- THE UTILITY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -25,8 +35,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
-
-
 
 
